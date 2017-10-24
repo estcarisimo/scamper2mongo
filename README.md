@@ -11,7 +11,7 @@ This repo focuses on explaining how to load scamper's warts ouput into a mongoDB
 It is necessary to have mongoDB and scamper.
 
 ```
-$ sudo apt update; sudo apt-get install mongodb scamper
+$ sudo apt-get update; sudo apt-get install mongodb scamper
 ```
 
 Additionally, to run python scripts pymongo have to be installed
@@ -22,13 +22,13 @@ $ sudo pip install pymongo
 
 ## How to use
 
-1) You have to load scamper's outputs, which are located in /pings and /traceroutes, using the following scripts
+1) You have to load scamper's outputs into mongoDB. The example database called 'scamper' will be filled with the warts files that contains the results, which are located in /pings and /traceroutes. The following BASH scripts fill the databse:
 
 ```
 $ ./loadPingsData.sh
 $ ./loadTracerouteData.sh
 ```
-Both examples shows the command used to generate the ping and traceroute in case you were interested in to run it by yourself.
+The sentence used to run the ping or the traceroute is inclueded (commented) in each file in caes you were interested in running it again by yourself.
 
 2) You can run any python script to retrieve the results of both measurements.
 
@@ -37,4 +37,4 @@ $ python mongoTRACEROUTEexample.py
 $ python mongoPINGexample.py
 ```
 
-The code are pretty simple and the output is not really interesting but you can have a look at the code to get involved with mongo's pipeline, which is the equivalent to the SQL query.
+The code in each script is pretty simple and both outputs are not really meaningful but you can have a look at the code to get involved with mongo's pipeline, which is the equivalent to the SQL query.
