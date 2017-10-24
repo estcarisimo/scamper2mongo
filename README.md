@@ -6,7 +6,7 @@ Regarding mongoDB is a NoSQL database which uses JSON inputs. Its goal is to pro
 
 This repo focuses on explaining how to load scamper's warts ouput into a mongoDB and then using Python, retrieve and handle the data.
 
-##Requirements
+## Requirements
 
 It is necessary to have mongoDB and scamper.
 
@@ -18,4 +18,23 @@ Additionally, to run python scripts pymongo have to be installed
 
 ```
 $ sudo pip install pymongo
-``` 
+```
+
+## How to use
+
+1) You have to load scamper's outputs, which are located in /pings and /traceroutes, using the following scripts
+
+```
+$ ./loadPingsData.sh
+$ ./loadTracerouteData.sh
+```
+Both examples shows the command used to generate the ping and traceroute in case you were interested in to run it by yourself.
+
+2) You can run any python script to retrieve the results of both measurements.
+
+```
+$ python mongoTRACEROUTEexample.py
+$ python mongoPINGexample.py
+```
+
+The code are pretty simple and the output is not really interesting but you can have a look at the code to get involved with mongo's pipeline, which is the equivalent to the SQL query.
